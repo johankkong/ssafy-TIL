@@ -90,6 +90,7 @@ script 태그는 body 안에 / console.log("Hello World!") 를 통해 출력 이
 최대 2시간까지만 고민해볼 것 > 이후엔 검색 
 "시간제한" 
 
+String은 ==으로 비교할 수 없다. string1.equals(string2) 로 비교해야한다.
 
 
 
