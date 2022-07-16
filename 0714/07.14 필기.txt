@@ -1,0 +1,147 @@
+07.14
+8반으로 모인 만큼 하나가 되었다고 생각하자
+it업계가 생각보다 좁고 추천제가 많아, 좋은 사이를 유지해보는 것이 좋다
+
+git
+오픈소스 개발시에 많이 사용됨 - 코드를 모두 공개하기 때문에 회사에선 사용하지 않음
+큰 회사부터 스타트업까지 모두 버전관리에 사용함 - gitlab으로 관리하게 된다.
+오픈소스는 github을 사용, 싸피에서는 gitlab을 사용한다.
+명령어
+cd - change directory
+mkdir - make directory
+git init - git을 시작, 깃 데이터베이스를 만든 것과 같다. 
+	비어있는 깃 저장소가 생긴 것
+git은 데이터베이스와 같다.
+git status - 현재상태를 보여준다.
+보기/숨김 항목 체크를 하면 .git directory 가 보인다.
+	- .이 붙은 디렉토리는 숨김폴더이다.
+새로운 파일을 만들고 다시 git status를 하면 변화가 생긴것을 볼 수 있다.
+git add 파일명 - git에 추가하는 명령어
+다시 git status 를 쳐보면 변경사항이 추적됨을 알 수 있다.
+git commit -m 메세지-변경사항을 적어주면 됨
+git log / commit 기록을 볼 수 있다.
+dir 디렉토리 정보를 볼 수 있다.
+git add 는 변경사항을 쌓는 것 
+git restore 는 아예 바꿔버리는 것
+
+웹 상에서 create하면 remote git 저장소가 만들어 진 것.
+local에서 깃 저장소를 만들면 local git 저장소.
+하나의 remote 저장소에 여러 local 저장소가 맵핑 될 수 있다.
+
+git remote add origin 주소 // local 저장소를 remote 저장소에 연결
+	만약 주소가 잘 못 되었다면, git remote remove origin 을 해준다.
+git branch -M main // branch의 이름을 main을 바꾼다.
+git push -u origin main //origin 저장소의 main branch에 push한다.
+
+git clone 주소 디렉토리명 //remote 저장소의 또 다른 local 저장소를 생성한다.
+
+cd .. 상위 디렉토리
+
+git pull //remote 에서 변경사항을 local에 적용한다.
+	- 충돌된 상태에서 pull을 하면 head 와 commit 해쉬로 보여준다.
+	- 둘중에서 나은 것을 선택하거나 절충하거나
+
+vim에서 나갈때는 :에 q만 누르면 됨
+
+main branch 에서 작업하지 않고 다른 branch를 만들어 나중에 merge하게 된다. (충돌방지)
+
+git checkout -b 브랜치명 //새로운 브랜치로 나온다.
+git push -u origin 브랜치명 //새로운 브랜치로 푸쉬한다.
+
+git 서버에서 pull request를 처리한다. merge 하면서 메세지를 남기고 merge후에 branch를 삭제한다.
+이후에는 local에서 branch로 바꿔주고 pull한다.
+	git switch 브랜치명 //브랜치를 바꾼다.
+
+
+트랜지스터로 컴퓨터가 구성됨. 켜졌다 꺼졌다의 신호만 존재. >> 0과 1로 표현
+
+compiled // 프로그래밍 언어를 기계어로 바꿔주고 실행시켜준다.
+interpreted // 컴파일 과정을 거치지 않고, 한 줄 씩 해석해서 기계어로 바꿔준다.
+
+java의 경우 기계어 전단계인 byte code로 변환하게 된다. 이때 필요한 것이 JVM이다. 
+각 운영체제에 맞는 JVM이 존재한다. byte code만 있다면 각 OS에서 실행이 될 수 있다. >> write once, run everywhere.
+jre(java runtime environment) - jvm이 들어있는데 jdk가 더 큰 범위이다.
+
+<이클립스>
+윈도우 - 프리퍼런스 - encoding 검색 > encoding을 모두 UTF-8 로 변경 (한글이 안 깨지기 위해)
+workspace > project > pakage > class 단위로 구성됨
+프로젝트 생성시 JRE 메뉴에서 configure JRE's 를 눌러 zulu-8 폴더를 지정하고 만들어 주고 선택한다.
+	- 프로젝트를 생성하면 JRE System library 와 src 폴더가 생성되는데 src에 소스코드가 저장된다.
+	- JRE System library에서 각종 메소드를 가져오게 된다.
+	- src 폴더 안에 pakage를 먼저 만들고 그 안에 class를 작성하게 된다. 
+코드 첫 줄에 pakage에 표시된다.
+각 문장은 ; 으로 끝난다.
+클래스를 생성하였더라도 그 코드 파일명은 .java 가 되고 클래스명과 파일명이 일치하여야한다.
+클래스의 메소드 단위로 실행이 되고, main 함수가 주된 함수가 되어 실행이 된다. 
+main 만 치고 ctrl + space 를 치면 자동완성이 나온다.
+sysout 만 치고 ctrl + space
+컴파일 버전과 실행 버전이 일치하여야한다. 윈도우 > 프리퍼런스 > compiler 에서 1.8로 일치시켜 줄 것
+
+<변수>
+data를 담아두는 상자 / 변수에 이름이 존재
+변수에 type을 지정 ex) int - 정수형
+int x = 10; // x 는 변수명 // = 은 ←방향으로 대입
+
+변수 작성 규칙
+1. 알파벳 문자와 숫자, ‘$’, ‘_’ 로 이루어진다. (한글이름도 가능)
+2. 중간에 공백 X
+3. 첫번째 문자는 반드시 알파벳, ‘$’, ‘_’ 로 시작
+4. 대/소문자 구별
+5. 자바 언어 키워드 사용 X
+
+boolean - 1bit 로 표현 0이면 false, 1이면 true
+8bit = 1byte
+정수형
+- byte : 8bit : -127 ~ 128
+- short : 16bit
+- int : 32bit - 정수형 중 가장 많이 사용. 21억까지 사용가능
+- long : 64bit - 숫자 뒤에 L을 붙여줘야한다.
+
+변수를 선언하면, 해당 type에 해당하는 용량의 메모리를 차지한다.
+32bit 컴퓨터가 4기가 까지 밖에 인식을 못 했던 이유
+
+문자는 ' '을 사용, 문자열은 " "을 사용한다.
+'a' 를 정수화하면 97, 'A'를 정수화하면 65. 알파벳은 0~127까지의 아스키코드로 표현된다. 128가지 > 1byte. 
+	다른 한글까지 모든 기호를 통틀어 char 자료형은 2byte를 사용한다.
+
+형변환
+더 큰 범위의 자료형으로는 형변환이 자동으로 가능하다.
+explicit type casting - 작은 범위로 형변환하는 경우, 예측하기가 어렵다.
+	- 강제로 변환 (원하는 타입) 으로 사용. ex) int a = (int)4000000000L;
+
+구조적 프로그래밍 -> 객체지향
+순차적, 조건문, 반복문이 기본이 된다. 
+
+<연산자>
+==, !=, <, >, <=, >= 이 연산자들을 이용하면 true아니면 false가 나온다.(c언어에서는 0이나 1을 사용할 수 있음)
+++, -- 연산자. a++; 은 그 줄이 실행되고 ++ 이 실행되고, ++a; 는 먼저 ++을 실행하고 나서 그 줄이 실행된다.
+
+<조건문>
+if는 ()안을 검사하여 true 일 경우 {} 의 코드를 실행한다. false일 경우, {} 다음으로 넘어간다.
+else 가 있는 경우, if 다음의 ()가 false인 경우 else 다음의 {} 가 실행된다.
+switch 는 ()에 있는 값과 일치하는 case의 문장들을 실행하고 break가 없다면 그 이후를 모두 실행한다.
+	- break를 만나면 {} 블록 밖으로 나온다.
+
+<반복문>
+for 문에서 사용되는 변수 i 는 for 문안에서만 유효하다. - 반복적으로 사용이 가능
+	- 2중 for문에서는 다른 변수를 사용해야한다.
+while은 () 안을 검사하고 true 일때 {} 실행하는데 검사와 실행을 반복한다. false를 만나면 {} 다음으로 넘어간다.
+do {} while() 은 실행 후 검사 하는 것.
+
+코딩테스트 백준orSWEA 를 활용 외의 다양한 사이트가 존재 / 해외는 코드프로세스?
+백준에서 제출 할때는 패키지 줄을 떼어내고 class 명을 Main 으로 바꿔줘야한다.
+
+
+<HTML>
+web과 관련. 모든 문서(웹페이지 포함)는 HTML로 되어있다. 
+Hyper Text Markup Language // 프로그래밍 언어가 아니다.
+    문서        표시
+	- markup tag의 집합
+		ex) <h1> //제목시작태그
+			... </h1> //제목종료태그
+		<p> ... </p> //문장태그
+<p> 태그는 줄바꿈이 자동으로 되지 않음
+
+w3school <p> 등으로 검색하면 html의 교과서와 같음
+<a href=" "> </a> 하이퍼링크
+요소  속성
